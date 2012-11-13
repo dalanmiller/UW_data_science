@@ -12,26 +12,26 @@ Given a set of documents, an inverted index is a dataset with key = word and val
 
     def map(items):
 
-	#Iterate through the items
+		#Iterate through the items
 
-	#Split up document text (value) of each item into separate words
+		#Split up document text (value) of each item into separate words
 
-	#Reverse the dictionary create a set of the words (if frequency != important)
-	# as keys and a set of document ids as values since it's likely words will appear in multiple documents
+		#Reverse the dictionary create a set of the words (if frequency != important)
+		# as keys and a set of document ids as values since it's likely words will appear in multiple documents
 
-	emit(word, array_of_doc_ids)
+		emit(word, array_of_doc_ids)
 
     def reduce(item):
 
-	master = {}
+		master = {}
 
-	#Aggregate the dictionaries
+		#Aggregate the dictionaries
 
-	#For each item, add each value in set to master dictionary object, if possible?
+		#For each item, add each value in set to master dictionary object, if possible?
 
-	emit(master)
+		emit(master)
 
-	#Or emit each tuple of ('word', aggregated_set_of_ids(1,2,3,4))
+		#Or emit each tuple of ('word', aggregated_set_of_ids(1,2,3,4))
 
 
 Map:
@@ -52,20 +52,20 @@ Output Value: Aggregated array of Doc IDs
 ###Social Network
 Consider a simple social network dataset, where key = person and value = some friend of that person. Describe a MapReduce algorithm to count the number of friends each person has.
 
-def map(items):
+	def map(items):
 
-	#For each item, increment friend count of each person found (also if friend relationships
-	# in this social network are mutual, increment friend count for the value person as well?
-	# Also this assumes that for each incoming pair of (person, friend) that there are no duplicates.
+		#For each item, increment friend count of each person found (also if friend relationships
+		# in this social network are mutual, increment friend count for the value person as well?
+		# Also this assumes that for each incoming pair of (person, friend) that there are no duplicates.
 
-	emit(person, count)
+		emit(person, count)
 
 
-def reduce(items):
+	def reduce(items):
 
-	#For each person key in items, sum values
+		#For each person key in items, sum values
 
-	emit(person, total)
+		emit(person, total)
 
 Map:
 
@@ -86,22 +86,22 @@ Output Value: Sums of found friends of person
 ###Bioinformatics.
 Consider a set of sequences where key = sequence id and value = a string of nucleotides, e.g., GCTTCCGAAATGCTCGAA.... Describe an algorithm to trim the last 10 characters from each read, then remove any duplicates generated. (Hint: It's not all that different from the Social Network example.)
 
-def map(items):
-	master = set()
+	def map(items):
+		master = set()
 
-	#For each item, take the nucleotide string and slice last ten characters
+		#For each item, take the nucleotide string and slice last ten characters
 
-	master.add(sliced_nucleotides) #Not sure if this structure is available, but handles duplicates
+		master.add(sliced_nucleotides) #Not sure if this structure is available, but handles duplicates
 
-	emit(master)
+		emit(master)
 
-def reduce(items):
+	def reduce(items):
 
-	master = set()
-	#Ensure that each new result batch from map is aggregated into a larger set, further
-	# ensuring that there are no duplicates from other map results.
+		master = set()
+		#Ensure that each new result batch from map is aggregated into a larger set, further
+		# ensuring that there are no duplicates from other map results.
 
-	emit(master0)
+		emit(master0)
 
 Map:
 
