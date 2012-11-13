@@ -36,17 +36,17 @@ Given a set of documents, an inverted index is a dataset with key = word and val
 
 Map:
 
-Input Key: Document ID
-Input Value: Document Text
-Output Key: Word
-Output Value: Array of Doc IDs
+* Input Key: Document ID
+* Input Value: Document Text
+* Output Key: Word
+* Output Value: Array of Doc IDs
 
 Reduce:
 
-Input Key: Word
-Input Value: Array of Doc IDs
-Output Key: Word
-Output Value: Aggregated array of Doc IDs
+* Input Key: Word
+* Input Value: Array of Doc IDs
+* Output Key: Word
+* Output Value: Aggregated array of Doc IDs
 
 
 ###Social Network
@@ -69,17 +69,17 @@ Consider a simple social network dataset, where key = person and value = some fr
 
 Map:
 
-Input Key: Person
-Input Value: Friend of Person
-Output Key: Person
-Output Value: Sum of found friends of person
+* Input Key: Person
+* Input Value: Friend of Person
+* Output Key: Person
+* Output Value: Sum of found friends of person
 
 Reduce:
 
-Input Key: Person
-Input Value: Sum of found friends of person
-Output Key: Person
-Output Value: Sums of found friends of person
+* Input Key: Person
+* Input Value: Sum of found friends of person
+* Output Key: Person
+* Output Value: Sums of found friends of person
 
 
 
@@ -105,17 +105,17 @@ Consider a set of sequences where key = sequence id and value = a string of nucl
 
 Map:
 
-Input Key: Sequence ID
-Input Value: String of Nucleotides
-Output Key: //Not necessary?
-Output Value: nucleotide_string[-10:]
+* Input Key: Sequence ID
+* Input Value: String of Nucleotides
+* Output Key: //Not necessary?
+* Output Value: nucleotide_string[-10:]
 
 Reduce:
 
-Input Key: // None
-Input Value: nucleotide_string
-Output Key: // None
-Output Value: Set of aggregated strings
+* Input Key: // None
+* Input Value: nucleotide_string
+* Output Key: // None
+* Output Value: Set of aggregated strings
 
 
 #Question 2.1
