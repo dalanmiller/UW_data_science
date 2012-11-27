@@ -11,11 +11,14 @@ import random
 
 def tri_finder( node_dict ):
     tri_list = []
-    for node, adj_list in node_dict.iteritems(): #Iterate through the adjacency list
+    for node, adj_list in node_dict.iteritems():
+        #Iterate through the adjacency list
 
-        for secondary_node in adj_list: #Iterate through each node in the adj list for that node
+        for secondary_node in adj_list:
+            #Iterate through each node in the adj list to get to the possible tertiary nodes
 
             for tertiary_node in node_dict[secondary_node]:
+                #or each tertiary node (or a node in the adj list of a node in the adj list of our initial node)
 
                 if node in node_dict[tertiary_node] and not any(x in tri_list for x in itertools.permutations((node, secondary_node, tertiary_node))):
                 #Check if n is in the original node's adjacency list, thus theoretically completing the triangle
