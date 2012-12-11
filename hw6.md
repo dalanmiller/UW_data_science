@@ -78,5 +78,11 @@ I then used the same AFINN analysis used for the Microsoft problem above, and ca
  u'WY': 0}</pre>
 
 
- ##5
+##5
 
+I'm quite confused as to why out of 10 million tweets taken over the course of several days that there were none given 'lang':'en',
+That happened to be in the middle of the day. I don't think it had to do with my MongoDB aggregation query which can be seen in hw6.py. 
+Basically I took a substr of the time value for the hour and then did the equivalent of a GROUP BY on that hour and created a giant list of
+all the tweets that I was then able to more easily run through with Python, doing a AFINN analysis on each. 
+
+![Bar Chart for Hours v Mood](https://github.com/dalanmiller/UW_data_science/raw/master/hw6.png)
