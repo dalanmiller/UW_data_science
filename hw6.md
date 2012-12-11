@@ -93,4 +93,9 @@ That happened to be in the middle of the day. I don't think it had to do with my
 Basically I took a substr of the time value for the hour and then did the equivalent of a GROUP BY on that hour and created a giant list of
 all the tweets that I was then able to more easily run through with Python, doing a AFINN analysis on each. 
 
+Also, I'm not sure if it's because I don't have a very strong math background or their APIs are designed very poorly, but it seems that numpy and matplotlib are both very difficult modules to work with
+when all I wanted to do was create a graph chart. It seems that the different plotting methods take various different parameters to the point where I'm not sure if 
+I'm going to get the result I expect if the data is interpreted differently than what I think? The examples on the matplotlib website are also very verbose and I have yet to see 
+a tutorial which explains in a incremental fashion how to go about using the library. Regardless, I was able to finally wrangle out the graph below.
+
 ![Bar Chart for Hours v Mood](https://github.com/dalanmiller/UW_data_science/raw/master/hw6.png)
