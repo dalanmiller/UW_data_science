@@ -27,7 +27,7 @@ Finally I realized my mistake and was able to narrow down the
 10,000,000+ tweets I had collected to the ones that contained geocode data, were in the United States, and had place_type of 'city' which was only about 40,000.
 I then used the same AFINN analysis used for the Microsoft problem above, and came up with the following list.
 
-```{u'AL': -11,
+<pre>{u'AL': -11,
  u'AR': -3,
  u'AZ': 0,
  u'CA': 29,
@@ -75,7 +75,7 @@ I then used the same AFINN analysis used for the Microsoft problem above, and ca
  u'WA': 26,
  u'WI': 11,
  u'WV': 10,
- u'WY': 0}```
+ u'WY': 0}</pre>
 
 
  ##5
