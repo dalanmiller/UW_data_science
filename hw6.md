@@ -1,7 +1,7 @@
 #Homework 6
 
-
-Firstly, I ran it on an extra laptop at home which is running Ubuntu Server. Running the twitterstream.py and just piping the output resulted in a file that would grow very very quickly. I think after one night of scraping the API it was 3+Gb. So I wrote my own API scraper and removed some of the data that I knew I wouldn't use in the end anyway thus saving a lot of space but more importantly not having to json.loads irrelevant data into memory. 
+I came across a couple problems with this assignment which caused a lot of headache but a lot of learning as well. 
+Initially, I ran twitterstream.py on an extra laptop at home which is running Ubuntu Server. Running the twitterstream and just piping the output resulted in a file that would grow very very quickly. I think after one night of scraping the API it was 3+Gb. So I wrote my own API scraper and removed some of the data that I knew I wouldn't use in the end anyway thus saving a lot of space but more importantly not having to json.loads irrelevant data into memory. 
 
 After I had amassed 10 million + line output file, I broke it into chunks using unix split and then went through each of those files inputting them into a locally running MongoDB database which swelled to greater than 10gb. 
 I was then able to run queries on the data more easily and not have to wait for them to load into memory (at least not in Python) and could complete the problems below. However, without limiting the data in some way I found it took quite some time to run
